@@ -1,0 +1,68 @@
+version: "3.7"
+
+services:
+  nginx:
+    depends_on:
+      - wordpress
+    build: ./requirements/nginx
+    tty: true
+    networks:
+      - net
+    ports:
+      - "443:443"
+    volumes:
+      - wordpress-volume:/var/www/wordpress
+    restart: always
+
+  wordpress:
+    depends_on:
+      - mariadb
+    build: ./requirements/wordpress
+    networks:
+      - net
+    tty: true
+    ports:
+      - "9000:9000"
+    volumes:
+      - wordpress-volume:/var/www/wordpress
+    environment:
+      - SQL_NAME=${SQL_NAME}
+      - SQL_USER=${SQL_USER}
+      - SQL_PASS=${SQL_PASS}
+      - SQL_HOST=${SQL_HOST}
+      - DOMAIN_NAME=${DOMAIN_NAME}
+    restart: always
+
+  mariadb:
+    tty: true
+    build:
+      context: ./requirements/mariadb
+      args:
+        - SQL_NAME=${SQL_NAME}
+        - SQL_USER=${SQL_USER}
+        - SQL_PASS=${SQL_PASS}
+    networks:
+      - net
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb-volume:/var/lib/mysql
+    restart: always
+
+networks:
+  net:
+    name: mynet
+
+volumes:
+  mariadb-volume:
+    driver: local
+    driver_opts:
+      device: /home/ccoto/data/mariadb
+      type: volume
+      o: bind
+  wordpress-volume:
+    driver: local
+    driver_opts:
+      device: /home/ccoto/data/wordpress
+      type: volume
+      o: bind
