@@ -11,8 +11,8 @@ Things that must be set up:
     A volume that contains WordPress database
     A second volume that contains WordPress website files
     docker-networks between these containers
-
-![image](https://user-images.githubusercontent.com/71769427/147575494-6e5b42d7-057c-40b6-a5f9-98ca19352ea7.png)
+    
+![image](https://user-images.githubusercontent.com/71769427/147575722-9f0fe636-302d-4af1-bb7f-a27f8829108a.png)
 
 You will find the subject of the project at the root of the repository.
 
