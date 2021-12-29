@@ -14,6 +14,6 @@ Things that must be set up:
     
 ![image](https://user-images.githubusercontent.com/71769427/147575722-9f0fe636-302d-4af1-bb7f-a27f8829108a.png)
 
-:page_with_curl: You will find the subject of the project at the root of the repository.
+:page_with_curl: You will find the [subject](https://github.com/anfisah/inception/blob/main/en.subject.pdf) of the project at the root of the repository.
 
 :calendar: Submitted in november 2021
