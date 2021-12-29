@@ -1,8 +1,8 @@
 # inception
 
-Inception is an individual project at 42.
+:computer: Inception is an individual project at 42.
 
-A small infrastructure composed of different services under specific rules using docker-compose.
+:question: A small infrastructure composed of different services under specific rules using docker-compose.
 Things that must be set up:
 
     A Docker container that contains NGINX with TLSv1.2 or TLSv1.3
@@ -14,6 +14,6 @@ Things that must be set up:
     
 ![image](https://user-images.githubusercontent.com/71769427/147575722-9f0fe636-302d-4af1-bb7f-a27f8829108a.png)
 
-You will find the subject of the project at the root of the repository.
+:page_with_curl: You will find the subject of the project at the root of the repository.
 
-Submitted in november 2021
+:calendar: Submitted in november 2021
